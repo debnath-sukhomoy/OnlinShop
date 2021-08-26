@@ -1,0 +1,99 @@
+<html>
+<body background="createacc.jpg">
+<script language="javascript">
+function fun1()
+{
+	var uid=document.getElementById("u_id").value
+	if(uid==""){
+	document.getElementById("uidshow").innerHTML="<font color=red>field required</font>"
+	document.getElementById("u_id").focus()
+	return false
+	}
+	else
+	{
+	document.getElementById("uidshow").innerHTML=" "
+	}
+	
+	var pwd=document.getElementById("pwd").value
+	if(pwd==""){
+	document.getElementById("pwdshow").innerHTML="<font color=red>field required</font>"
+	document.getElementById("pwd").focus()
+	return false
+	}
+        else
+	{
+	document.getElementById("pwdshow").innerHTML=" "
+	}
+
+	var l=pwd.length
+	if(l<8){
+	document.getElementById("pwd1show").innerHTML="<font color=red>password should be 8-32 characters</font>"
+	return false
+	}
+	else if(l>32) {
+	document.getElementById("pwd1show").innerHTML="<font color=red>password should be 8-32 characters</font>"
+	return false
+	}
+	else
+	{
+	document.getElementById("pwd1show").innerHTML=" "
+	}
+
+	var f_name=document.getElementById("f_name").value
+	if(f_name==""){
+	document.getElementById("fnameshow").innerHTML="<font color=red>field required</font>"
+	document.getElementById("f_name").focus()
+	return false
+	}
+	else
+	{
+	document.getElementById("fnameshow").innerHTML=" "
+	}
+
+	var l_name=document.getElementById("l_name").value
+	if(l_name==""){
+	document.getElementById("lnameshow").innerHTML="<font color=red>field required</font>"
+	document.getElementById("l_name").focus()
+	return false
+	}
+	else
+	{
+	document.getElementById("lnameshow").innerHTML=" "
+	}
+
+	var pno=document.getElementById("p_no").value
+	var pl=pno.length
+	if(pl!=10)
+	{
+	document.getElementById("pnoshow").innerHTML="<font color=red>not a valid ph. no.</font>"
+	document.getElementById("p_no").focus()	
+	return false
+	}
+	else
+	{
+	document.getElementById("pnoshow").innerHTML=" "
+	}
+	
+}
+</script>
+<center>
+<pre>
+<form action=creacc.jsp method=post name=f2 onsubmit="return fun1()">
+<h2>User ID(preferably mail id):	<input type=text name=u_id id=u_id><div id="uidshow"></div>
+
+<h2>Password:	                <input type=password name=pwd id=pwd><div id="pwdshow"></div><div id="pwd1show"></div>
+
+<h2>First name:    			<input type=text name=f_name id=f_name><div id="fnameshow"></div>
+
+<h2>Middle name:			<input type=text name=m_name>
+
+<h2>Last name:			<input type=text name=l_name id=l_name><div id="lnameshow"></div>
+
+<h2>Email address:			<input type=text name=email id=email>
+
+<h2>Ph. no.:			<input type=text name=p_no id=p_no><div id="pnoshow"></div>
+
+<h2>Address:			<textarea name=addr rows=5 col=25 id=adr></textarea>
+
+<input type=submit value="create account">
+</form></pre></center></body></html>
